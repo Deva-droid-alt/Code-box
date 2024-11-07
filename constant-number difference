@@ -1,0 +1,18 @@
+#a sequence where the difference between each pair of neighboring digits remains the same throughout the entire number.
+def has_constant_digit_difference(n):
+    digits_list=list(str(n))
+    print(digits_list)
+    
+    # Calculate the difference between the first two digits
+    difference = int(digits_list[1]) - int(digits_list[0])
+    
+    # Loop through the remaining digits to check the difference
+    for i in range(1, len(digits_list)):
+        if int(digits_list[i]) - int(digits_list[i-1]) != difference:
+            return False
+    
+    return True
+
+# Example usage
+number =int(input("Enter a number: "))
+has_constant_digit_difference(number)
